@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="etEmail">ادخل  البريد الالكتروني</string>
+    <string name="etPassword">ادخل الرقم السري</string>
+    <string name="Login">تسجيل الدخول</string>
+    <string name="tvRegister">انشاء حساب جديد</string>
+    <string name="etpaas2">تأكيد الرقم السري</string>
+    <string name="Register">حفظ</string>
+    <string name="patient">طلب دم</string>
+    <string name="dooner">متبرع بالدم</string>
+</resources>

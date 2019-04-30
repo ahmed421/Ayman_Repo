@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".patient.PatientRegister"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/etPatientName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textDirection="anyRtl"
+        android:textColor="@color/secondary"
+        android:background="@drawable/edit_bg"
+        android:textSize="28dp"
+        android:hint="اسم المريض"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
+        />
+    <EditText
+        android:id="@+id/etPatientAge"
+        android:layout_width="300dp"
+        android:textColor="@color/secondary"
+        android:background="@drawable/edit_bg"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textSize="28dp"
+        android:hint="العمر"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
+
+        />
+
+    <EditText
+        android:id="@+id/ethospital"
+        android:layout_width="300dp"
+        android:textColor="@color/secondary"
+        android:textDirection="anyRtl"
+        android:background="@drawable/edit_bg"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textSize="28dp"
+        android:hint="المستشفي"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
+
+        />
+
+
+
+        <EditText
+            android:id="@+id/etGender"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="28dp"
+            android:hint="الجنس"
+            android:textDirection="anyRtl"
+            android:textColor="@color/secondary"
+            android:textAlignment="center"
+            android:background="@drawable/edit_bg"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+
+            />
+
+
+
+
+    <EditText
+        android:id="@+id/etNatoinalNumber"
+        android:textDirection="anyRtl"
+        android:textColor="@color/secondary"
+        android:background="@drawable/edit_bg"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textSize="28dp"
+        android:hint="الرقم القومي"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
+
+        />
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:textColor="@color/secondary"
+        android:textDirection="anyRtl"
+        android:background="@drawable/edit_bg"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textSize="28dp"
+        android:hint="العنوان"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
+
+        />
+
+
+    <EditText
+        android:id="@+id/etPhoneNumber"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textDirection="anyRtl"
+        android:textColor="@color/secondary"
+        android:background="@drawable/edit_bg"
+        android:textSize="28dp"
+        android:hint="رقم التليفون"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
+
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        android:layout_marginTop="15dp"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnBloodtype"
+            android:textSize="28dp"
+            android:textColor="#fff"
+            android:background="@drawable/bloodtype_style"
+            android:text="فصيلة الدم"
+            android:padding="15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="40dp"
+            />
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnBank"
+            android:textSize="28dp"
+            android:textColor="#fff"
+            android:background="@drawable/bloodtype_style"
+            android:text="اقرب بنك دم "
+            android:padding="15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
