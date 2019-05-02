@@ -12,7 +12,16 @@ public class DonnerModel {
     String donate_person ;
     String Date_Donated ;
 
-    public DonnerModel(String name, String national_number, String password, String gender, String age, String phone_number, String address, String time_available, String donate_name, String date_donate) {
+    public DonnerModel(String name,
+                       String national_number,
+                       String password,
+                       String gender,
+                       String age,
+                       String phone_number,
+                       String address,
+                       String time_available,
+                       String donate_name,
+                       String date_donate) {
         this.name = name;
         this.national_number = national_number;
         this.password = password;
@@ -27,6 +36,15 @@ public class DonnerModel {
 
 
     public DonnerModel() {
+    }
+
+    public DonnerModel(String name, String address, String gender, String age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+        this.address = address;
+
+
     }
 
     public String getName() {

@@ -1,9 +1,15 @@
 package com.example.bankbloodproject.Home;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
+import android.text.TextUtils;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,10 +20,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.bankbloodproject.R;
+import com.example.bankbloodproject.auth.LoginActivity;
+import com.example.bankbloodproject.fragmentHomeAdmin.FirstFragment;
+import com.example.bankbloodproject.fragmentHomeAdmin.SecondFragment;
+import com.example.bankbloodproject.fragmentHomeAdmin.ThirdFragment;
 import com.example.bankbloodproject.model.AdminDataModel;
+import com.example.bankbloodproject.model.DonnerModel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,6 +44,9 @@ import java.util.List;
 public class HomeAdmin extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private DatabaseReference reference;
+    private FirebaseAuth firebaseAuth;
+    private EditText nameText,ageText,genderText,bloodGroupText,addressText;
+
 
 
     @Override
@@ -43,8 +60,7 @@ public class HomeAdmin extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                ShowAddDoonerDialog();
             }
         });
 
@@ -56,6 +72,37 @@ public class HomeAdmin extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+    private void ShowAddDoonerDialog() {
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(HomeAdmin.this);
+        builder.setView(R.layout.add_donner_dialog).setPositiveButton("Add", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                SaveDataBase();
+            }
+        });
+        AlertDialog dialog = builder.show();
+        nameText=dialog.findViewById(R.id.editText4);
+        ageText=dialog.findViewById(R.id.editText5);
+        genderText=dialog.findViewById(R.id.editText6);
+        bloodGroupText=dialog.findViewById(R.id.editText7);
+        addressText=dialog.findViewById(R.id.editText8);
+
+    }
+    private void SaveDataBase() {
+        String name=nameText.getText().toString();
+        String age=nameText.getText().toString();
+        String gender=nameText.getText().toString();
+        String address=nameText.getText().toString();
+        if (!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(age)&&!TextUtils.isEmpty(gender)  &&
+                !TextUtils.isEmpty(address)){
+            List<DonnerModel>donnerModels=new ArrayList<>();
+
+            DonnerModel donnerModel =new DonnerModel(name,address,gender,age);
+            reference.child("dooner").child(donnerModels.size()+" ").push().setValue(donnerModel);
+
+        }
     }
 
     @Override
@@ -94,20 +141,55 @@ public class HomeAdmin extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        Fragment fragment = null;
+        Class fragmentClass = null;
 
-        if (id == R.id.nav_profile) {
-           // displayProfileAdmin();
-            // Handle the camera action
-        } else if (id == R.id.nav_bloodrequest) {
+        switch (item.getItemId()){
+            case R.id.nav_profile:
+                fragmentClass = FirstFragment.class;
 
-        } else if (id == R.id.nav_donner) {
+                break;
+            case R.id.nav_bloodrequest:
+                fragmentClass = SecondFragment.class;
 
-        } else if (id == R.id.patient) {
+                break;
+                case R.id.nav_donner:
+                    fragmentClass = SecondFragment.class;
 
-        } else if (id == R.id.nav_signpout) {
+                    break;
 
+                case R.id.patient:
+                    fragmentClass = ThirdFragment.class;
+
+                    break;
+
+                case R.id.nav_signpout:
+                    firebaseAuth.signOut();
+                    startActivity(new Intent(HomeAdmin.this, LoginActivity.class));
+                    finish();
+
+
+                    break;
+            default:
+                fragmentClass = FirstFragment.class;
+
+
+
+    }
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
+        // Insert the fragment by replacing any existing fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+
+        // Highlight the selected item has been done by NavigationView
+        item.setChecked(true);
+        // Set action bar title
+        setTitle(item.getTitle());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

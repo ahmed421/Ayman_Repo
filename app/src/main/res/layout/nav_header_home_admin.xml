@@ -16,13 +16,11 @@
     >
 
     <ImageView
-        android:padding="10dp"
         android:layout_gravity="center"
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/nav_header_desc"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@drawable/img_20190317_010038"/>
 
     <TextView
@@ -30,11 +28,12 @@
         android:textStyle="bold"
         android:textColor="@color/White"
         android:gravity="center"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="وريد"
-        android:textSize="30dp"
+        android:textSize="20sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 
