@@ -1,92 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".auth.RegisterActivity">
-    <LinearLayout
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/img_20190317_010038"
-            android:layout_marginTop="50dp"
-            />
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/edit_bg"
-            android:inputType="textEmailAddress"
-            android:hint="@string/etEmail"
-            android:textColor="@color/secondary"
-            android:textSize="16sp"/>
-        <EditText
-            android:id="@+id/etpass1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/edit_bg"
-            android:inputType="textPassword|number"
-            android:hint="@string/etPassword"
-            android:textColor="@color/secondary"
-            android:textDirection="anyRtl"
-            android:textSize="16sp"/>
-        <EditText
-            android:id="@+id/etPass2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/edit_bg"
-            android:inputType="textPassword|numberPassword"
-            android:hint="@string/etpaas2"
-            android:textColor="@color/secondary"
-            android:textDirection="anyRtl"
-
-            android:textSize="16sp"/>
-        <Button
-            android:id="@+id/btnRRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/btn_bg"
-            android:onClick="signUp"
-            android:text="@string/Register"
-            android:textColor="@color/White"
-            android:textSize="25sp"
-            />
-        <TextView
-            android:id="@+id/tvLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:padding="20dp"
-            android:text="لديك حساب؟ تسجيل دخول"
-            android:textColor="#000"
-            android:textSize="20sp"
-            />
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient"
+        android:orientation="vertical">
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    </LinearLayout>
 
+            <TextView
+                android:id="@+id/txtReg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="30dp"
+                android:text="Registration"
+                android:textColor="@color/White"
+                android:textSize="35dp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/White"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColor="@color/White"
+                android:textColorHint="@color/White"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/txtGen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:text="Gender"
+                android:textColor="@color/White"
+                android:textSize="30dp" />
+
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="100">-->
+
+            <RadioGroup
+
+                android:id="@+id/radioGen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <RadioButton
+                    android:textColor="@color/White"
+                    android:layout_weight="50"
+                    android:id="@+id/maleradioButtonm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Male"
+                    android:textSize="24dp"
+                    tools:ignore="RtlCompat" />
+
+                <RadioButton
+                    android:textColor="@color/White"
+
+                    android:layout_weight="50"
+                    android:id="@+id/femaleradioButtonf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Female"
+                    android:textSize="24dp"
+                    tools:ignore="RtlCompat" />
+
+
+            </RadioGroup>
+
+
+            <!--</LinearLayout>-->
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/White"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textColor="@color/White"
+                android:textColorHint="@color/White"
+                android:textSize="22dp" />
+
+            <EditText
+                android:id="@+id/editPassreg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/White"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textAlignment="center"
+                android:textColor="@color/White"
+                android:textColorHint="@color/White"
+                android:textSize="22dp" />
+
+
+            <EditText
+                android:id="@+id/editCont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/White"
+                android:ems="10"
+                android:maxLength="11"
+                android:hint="Contact NO"
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:textColor="@color/White"
+                android:textColorHint="@color/White"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/txtCity_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:text="Press to Get Location"
+                android:textColor="@color/White"
+                android:textSize="22dp" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/txtBldgrp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:text="Blood Group"
+                android:textColor="@color/White"
+                android:textSize="22dp" />
+
+
+            <Spinner
+                android:id="@+id/spinnerBlg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:layout_marginTop="25dp"
+                android:entries="@array/blood_arrays"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+
+                <CheckBox
+                    android:id="@+id/donor_check"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:checked="true"
+                    android:textSize="22dp"
+                    android:layout_marginStart="90dp"
+                    tools:ignore="RtlCompat"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtDonor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="10dp"
+                    android:text="I am Donner"
+                    android:textColor="@color/White"
+                    android:textSize="22dp"
+                    tools:ignore="RtlCompat" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnReg2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/btncustom"
+                android:text="Register"
+                android:textColor="@color/White"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBarreg"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
 </ScrollView>
