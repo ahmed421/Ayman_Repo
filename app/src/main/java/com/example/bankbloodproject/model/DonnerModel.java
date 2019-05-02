@@ -35,7 +35,7 @@ public class DonnerModel {
     }
 
 
-    public DonnerModel() {
+    public DonnerModel(String namel, String mobile1, String emaill, String paswdl, String bloodl, String strDonor, String strgender) {
     }
 
     public DonnerModel(String name, String address, String gender, String age) {
