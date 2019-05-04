@@ -97,6 +97,9 @@ public class LoginActivity extends AppCompatActivity {
                     // If sign in fails, display a message to the user.
 
                     if (!task.isSuccessful()) {
+
+
+                        
                         // If Authentication failed.
                         Toast.makeText(LoginActivity.this, "Invalid Login", Toast.LENGTH_LONG).show();
                         //Log.i("admin",task.getException().toString());
