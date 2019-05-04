@@ -42,7 +42,6 @@
         <activity
             android:name=".Home.HomeAdmin"
             android:label="@string/title_activity_home_admin"
-            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".Home.HomeActivity"
