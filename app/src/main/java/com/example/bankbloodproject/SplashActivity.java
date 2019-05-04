@@ -31,37 +31,24 @@ public class SplashActivity extends AppCompatActivity {
                                       public void run() {
                                           startActivity(new Intent(SplashActivity.this, LoginActivity.class));
 //                                          if (auth.getCurrentUser() != null) {
-                                          //
+//
 //                                              if (currentUser != null) {
 //
 //                                                  uid = currentUser.getUid();
 //
 //
-//                                                  if (uid.equals("S17BXDZNiRd8N7fKuLK9DFhcC8g1")) {
+//                                                  if (uid.equals("XzQyFGL8VVUYBuZCeQpmTg3iMF32")) {
 //
 //                                                      Intent intentAuth = new Intent(SplashActivity.this, HomeAdmin.class);
-//                                                      //intentAuth.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 //                                                      startActivity(intentAuth);
 //                                                      finish();
 //
 //                                                  } else {
 //
 //                                                      Intent intentAuth = new Intent(SplashActivity.this, HomeActivity.class);
-//                                                      // intentAuth.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 //                                                      startActivity(intentAuth);
 //                                                      finish();
 //                                                  }
-//
-//
-////                if (currentUser==null){
-//////                    if (uid == "lNdli3tSqbdCM7WHiLzugD6YKk02") {
-//////                        startActivity(new Intent(SplashActivity.this, HomeAdmin.class));
-//////                    }else
-////                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-////
-////                }else
-////                    startActivity(new Intent(SplashActivity.this, HomeActivity.class));
-////                    finish();
 //
 //
 //                                              }
